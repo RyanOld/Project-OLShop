@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="utf-8">
+  <title>Home | D'Vica Store</title>
+  <link rel="stylesheet" href="./index.css">
+  <meta name="viewport" content="width= device-width, initial-scale= 1">
+  <meta name="description" content="Bagian Utama D'Vica Online Store">
+  <script defer src="./index.js"></script>
+</head>
+
+<body>
+ <header class="title-bar">
+   <section class="image">
+    <a href="./">
+      <img src="../assets/ele/dvica ed.png" alt="">
+    </a>
+   </section>
+    <ul class="navbar">
+<!--      <a href="../"><li class="nav-items">Home</li></a> -->
+      <section class="logged-out">
+        <a href="../login"><li class="nav-items">Login</li></a>
+        <a href="../signup"><li class="nav-items">Signup</li></a>
+      </section>
+      <section class="logged-in">
+        <a href="../profile"><li class="nav-items" id="account-name">
+          Your Account
+        </li></a>
+        <a href=""><li class="nav-items" id="logout-btn">Logout</li></a>
+      </section>
+    </ul>
+ </header>
+ <section class="main-content">
+   <ul class="listed-items-container">
+     
+     <li class="listed-item" id = "seed">
+       <img src="../assets/ele/permen2.jpg" alt="">
+       <div class="item-info">
+          <h3 class = "item-name"   >Nama Produk</h3>
+          <p class = "desc"         >Deskripsi</p>
+          <p class = "stock"        >Stok</p>
+          <p class = "price"        >Harga</p>
+          <div class="order-buttons">
+            <button class="less">-</button>
+            <p class="count">0</p>
+            <button class="more">+</button>
+          </div>
+       </div>
+     </li>
+    
+     <!--
+     <li class="listed-item">
+      <img src="../assets/ele/selamat datang ed.png" alt="">
+      <div class="item-info">
+        <h3 class="item-name">Nama Produk</h3>
+        <p class="desc">Deskripsi</p>
+        <p class="stock">Stok</p>
+        <p class="harga">Harga</p>
+        <div class="order-buttons">
+          <button class="less">-</button>
+          <p class="count">0</p>
+          <button class="more">+</button>
+        </div>
+      </div>
+     </li>
+     <li class="listed-item">
+      <img src="../assets/ele/selamat datang ed.png" alt="">
+      <div class="item-info">
+        <h3 class="item-name">Nama Produk</h3>
+        <p class="desc">Deskripsi</p>
+        <p class="stock">Stok</p>
+        <p class="harga">Harga</p>
+        <div class="order-buttons">
+          <button class="less">-</button>
+          <p class="count">0</p>
+          <button class="more">+</button>
+        </div>
+      </div>
+     <li class="listed-item">
+      <img src="../assets/ele/selamat datang ed.png" alt="">
+      <div class="item-info">
+        <h3 class="item-name">Nama Produk</h3>
+        <p class="desc">Deskripsi</p>
+        <p class="stock">Stok</p>
+        <p class="harga">Harga</p>
+        <div class="order-buttons">
+          <button class="less">-</button>
+          <p class="count">0</p>
+          <button class="more">+</button>
+        </div>
+      </div>
+     </li>
+     <li class="listed-item">
+      <img src="../assets/ele/selamat datang ed.png" alt="">
+      <div class="item-info">
+        <h3 class="item-name">Nama Produk</h3>
+        <p class="desc">Deskripsi</p>
+        <p class="stock">Stok</p>
+        <p class="harga">Harga</p>
+        <div class="order-buttons">
+          <button class="less">-</button>
+          <p class="count">0</p>
+          <button class="more">+</button>
+        </div>
+      </div>
+     </li>
+    -->
+   </ul>
+ </section>
+ <section class="ordered">
+   <button class="buy-these">
+     Bayar
+   </button>
+ </section>
+</body>
+</html>

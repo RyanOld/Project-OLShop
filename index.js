@@ -1,0 +1,2 @@
+localStorage['jwt'] = '';
+localStorage['currentuser'] = '';
