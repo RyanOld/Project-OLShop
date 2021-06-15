@@ -126,7 +126,7 @@ fetch('http://localhost:1337/products', {
           productNode.querySelector('img').src = "http://localhost:1337" + productsdata[index].picture.formats.thumbnail.url;
           console.log(productNode.src);
           productNode.querySelector('.item-name').innerHTML = productsData[index].name;
-          productNode.querySelector('.stock').innerHTML = "Stok : " + productsData[index].stock;
+//          productNode.querySelector('.stock').innerHTML = "Stok : " + productsData[index].stock;
           productNode.querySelector('.price').innerHTML = "Harga : Rp." + productsData[index].price;
           productNode.id = index;
           docFrag.append(productNode);
