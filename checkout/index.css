@@ -1,0 +1,148 @@
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  margin : 0 auto;
+  background : url(../assets/bg/bg\ selamat\ datang.png);
+/*  background-repeat: no-repeat; 
+  background-size: 100%;
+  width : 100%;
+  */
+  height : 100%;
+  color : white;
+}
+
+.title-bar {
+  display : flex;
+  flex : auto;
+  background :rgba(11, 24, 43, 0.9);
+}
+.image {
+  width : 20%;
+  min-width : 18rem;
+}
+.title-bar img {
+  width : 100%;
+  margin : 0 auto;
+}
+
+.navbar {
+  display : flex;
+  flex : auto;
+  margin : 0 auto;
+  margin-left : 50%;
+  padding : 0;
+  width : 30%;
+  text-align: right;
+}
+
+.nav-items {
+  list-style-type: none;
+  margin : auto;
+  font-size : 1.5rem;
+  color : white;
+  text-align : center;
+  vertical-align : middle;
+  padding : 1rem 0.5rem;
+}
+.nav-items:hover {
+  opacity : 0.8;
+  background : rgba(200, 200, 255, 0.5);
+  cursor: pointer;
+}
+
+.index {
+  font-size : 1.1rem;
+}
+.checkout {
+  width : 70%;
+  background : rgba(200, 200, 255, 0.4);
+  margin : 0 auto;
+  border-radius: 1rem;
+  padding : 1rem;
+}
+.checkout-main {
+  margin : 0 auto;
+  margin-top : 1.5rem;
+  font-size : 0.9rem;
+  padding-left : 1rem;
+}
+.checkout-main p {
+  margin : 0.7rem 0;
+}
+.checkout-sys {
+  width : 100%;
+  margin : 0 auto;
+  font-size : 1rem;
+  padding-left : 1rem;
+}
+.checkout-sys p {
+  margin : 0.7rem 0;
+  font-weight: 400;
+}
+.admin {
+  display : grid;
+  grid-template-columns: 1fr 4fr 2fr;
+}
+
+.total {
+  display : grid;
+  grid-template-columns: 1fr 4fr 2fr;
+  width : 100%;
+  margin : 0 auto;
+  font-size : 1rem;
+  padding-left : 1rem;
+}
+.total p {
+  margin : 0.2rem 0;
+}
+.title {
+  text-align: center;
+  font-size: 2rem;
+  margin : 0 auto;
+  margin-bottom : 1.5rem;
+}
+
+.purchased-items {
+  display : grid;
+  grid-template-columns: 1fr 4fr 2fr;
+}
+/*
+.pcs {
+  text-align: center;
+}
+*/
+/*
+.pay {
+  background : rgba(200, 200, 255, 0.5); 
+  font-size: 1.5rem;
+  color : white; 
+  border : none;
+  padding : 0.5rem;
+  border-radius : 1.25rem;
+  margin : 0 auto;
+  text-align : center;
+
+} */
+.btn-container {
+  margin : 0 auto;
+  text-align: center;
+  margin-top : 1rem;
+}
+.btn-container button {
+  font-size : 1.5rem;
+  margin : 1rem auto;
+  border : none;
+  border-radius : 1.5rem;
+  min-width : 120px;
+  padding : 0.5rem 2rem;
+  text-align : center;
+  background : rgba(184, 195, 203, 1);
+}
+.btn-container button:hover {
+  opacity : 0.8;
+  cursor:pointer;
+}
+.btn-container p {
+  margin : 0 auto;
+  font-size : 0.8rem;
+  color : white;
+}

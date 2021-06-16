@@ -9,7 +9,11 @@ const greetings = document.querySelector('#account-name');
 //take count of each product, send it to checkout page
 let countBtnArr = document.querySelectorAll('.count');
 let productCountArr = [];
-
+//transition to checkout page
+checkoutBtn = document.querySelector('.buy-these');
+checkoutBtn.onclick = () => {
+  window.location.href = '../checkout';
+}
 
 //fetching data from other page/database : user info if logged in.
 //getting data on the current user logged in
@@ -196,6 +200,7 @@ fetch('http://localhost:1337/products', {
 //          index++;
         })
         console.log(productCountArr);
+        localStorage['orders'] = productCountArr;
         }).catch(e => {
         console.log(e);
         });
@@ -205,4 +210,5 @@ setInterval(() => {
   for(index = 0; index < productCountArr.length; index++) {
     productCountArr[index] = parseInt(countBtnArr[index].innerHTML);
   } 
-}, 300);
+  localStorage['orders'] = productCountArr;
+}, 400);

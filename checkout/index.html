@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8">
-  <title>Home | D'Vica Store</title>
+  <title>Checkout | D'Vica Store</title>
   <link rel="stylesheet" href="./index.css">
   <meta name="viewport" content="width= device-width, initial-scale= 1">
   <meta name="description" content="Bagian Utama D'Vica Online Store">
@@ -11,7 +11,50 @@
 </head>
 
 <body>
-  
+  <header class="title-bar">
+    <section class="image">
+      <a href="./">
+        <img src="../assets/ele/dvica ed.png" alt="">
+      </a>
+    </section>
+    <ul class="navbar">
+      <!--      <a href="../"><li class="nav-items">Home</li></a> -->
+      <section class="logged-out">
+          <li class="nav-items home">Home</li>
+      </section>
+    </ul>
+  </header>
+  <section class="checkout">
+    <section class="checkout-main">
+      <h2 class="title">Rincian Pembayaran</h2>
+      <section class="purchased-items index">
+        <p class="pcs">Pcs</p>
+        <p class="product-name">Nama Produk</p>
+        <p class="price">Harga Total</p>
+      </section>
+      <section class="purchased-items" id="seed">
+        <p class="pcs">Pcs</p>
+        <p class="product-name">Nama Produk</p>
+        <p class="price">Harga Total</p>
+      </section>
+    </section>
+    <section class="checkout-sys">
+      <section class="admin">
+      <p></p>
+      <p>Biaya Administrasi (4%)</p>
+      <p class="admin-cost">0</p>
+      </section>
+    </section>
+    <section class="total">
+      <p></p>
+      <p>Total</p>
+      <p class="total-cost">0</p>
+    </section>
+    <section class="btn-container">
+      <button class="pay">Bayar</button>
+    </section>
+  </section>
+
 </body>
 
 </html>
