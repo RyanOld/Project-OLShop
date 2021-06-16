@@ -2,8 +2,15 @@
 
 let minBtnArr = document.querySelectorAll(".less");
 let moreBtnArr = document.querySelectorAll(".more");
-
+//make all product listings clickable => go to details of clicked product
+let productBtnArr = document.querySelectorAll('.clickable');
+//greet user if they signed in
 const greetings = document.querySelector('#account-name');
+//take count of each product, send it to checkout page
+let countBtnArr = document.querySelectorAll('.count');
+let productCountArr = [];
+
+
 //fetching data from other page/database : user info if logged in.
 //getting data on the current user logged in
 let auth = 'Bearer ' + localStorage['jwt'];
@@ -99,8 +106,7 @@ fetch('http://localhost:1337/products', {
         }).then(productsdata => {
         //bruh remember this is a promise. this thing will wait for response from server. 
         //put code that use the var here! not outside!
-        console.log(productsdata);
-
+        
         productsData = productsdata;
         //fetching all available products.
         let productNode = root.querySelector('#seed').cloneNode(true);
@@ -124,14 +130,14 @@ fetch('http://localhost:1337/products', {
           document.querySelector('.listed-items-container').append(productNode);
 */
           productNode.querySelector('img').src = "http://localhost:1337" + productsdata[index].picture.formats.thumbnail.url;
-          console.log(productNode.src);
+//          console.log(productNode.src);
           productNode.querySelector('.item-name').innerHTML = productsData[index].name;
 //          productNode.querySelector('.stock').innerHTML = "Stok : " + productsData[index].stock;
           productNode.querySelector('.price').innerHTML = "Harga : Rp." + productsData[index].price;
           productNode.id = index;
           docFrag.append(productNode);
-          console.log(docFrag)
-          console.log(index);
+//          console.log(docFrag)
+//          console.log(index);
         }
         document.querySelector('#seed').remove();
         root.append(docFrag);
@@ -155,28 +161,48 @@ fetch('http://localhost:1337/products', {
           })
         });
 
+        //make all product image and name clickable, can open link to detailed description
+/*        for(let i = 0; i < productBtnArr.length; i++) {
+          productBtnArr[i].onclick = () => {
+          window.location.href = './product';
+          console.log(i);
+          }
+        }
+*/
+        productBtnArr = document.querySelectorAll('.clickable');
+        index = 0;
+        productBtnArr.forEach((element) => {
+        element.addEventListener('click', () => {
+          localStorage['productno'] = parseInt(element.parentElement.parentElement.id);
+          
+          window.location.href = './product';
+//          console.log(element);
+          
+          });
+//          console.log(index);
+          index++;
+        })
+        console.log(productsdata);
+        //create array of item counts for enumerating orders.
+        countBtnArr = document.querySelectorAll('.count');
+//        index = 0;
+        countBtnArr.forEach((element) => {
+          productCountArr.push(parseInt(element.innerHTML));
+/*
+          element.setInterval(() => {
+            productCountArr[index] = parseInt(element.innerHTML);
+          }, 200);
+          */
+//          index++;
+        })
+        console.log(productCountArr);
         }).catch(e => {
         console.log(e);
         });
 
-//getting it on screen
-
-//  index++
-/*
-  '<li class="listed-item">
-       <img src= ' + element.picture.formats.thumbnail.url +' alt="">
-       <div class="item-info">
-          <h3 class = "item-name"   >' + element.name + 'Nama Produk</h3>
-          <p class = "desc"         >' + element.description + 'Deskripsi</p>
-          <p class = "stock"        >' + element.stock + 'Stok</p>
-          <p class = "price"        >' + element.price + 'Harga</p>
-          <div class="order-buttons">
-            <button class="less">-</button>
-            <p class="count">0</p>
-            <button class="more">+</button>
-          </div>
-       </div>
-     </li>'
-*/
-//    });
-//  index = 0;
+//constantly watch change in order amounts.
+setInterval(() => {
+  for(index = 0; index < productCountArr.length; index++) {
+    productCountArr[index] = parseInt(countBtnArr[index].innerHTML);
+  } 
+}, 300);
