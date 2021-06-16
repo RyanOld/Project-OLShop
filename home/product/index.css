@@ -1,7 +1,7 @@
 body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   margin : 0 auto;
-  background : url(../assets/bg/bg\ selamat\ datang.png);
+  background : url(../../assets/bg/bg\ selamat\ datang.png);
   background-repeat: no-repeat; 
   background-size: 100%;
   width : 100%;
@@ -32,6 +32,26 @@ body {
   text-align: right;
 }
 
+.product-details {
+  width : 70%;
+  background : rgba(250, 250, 250, 0.5);
+  margin : 0 auto;
+  padding : 1.5rem;
+}
+.product-details img {
+  height : 250px;
+  margin : 0 auto;
+  align-self: center;
+  text-align: center;
+}
+.img-container {
+  margin : 0 auto;
+  margin : 0 auto;
+  display : flex;
+  flex : auto;
+  width : 55%;
+
+}
 .logged-out {
   display : flex;
   flex : auto;
@@ -57,44 +77,12 @@ body {
   cursor: pointer;
 }
 
-.listed-items-container {
-  width : 85%;
-  min-width : 700px;
-  background : rgba(200, 255, 255, 0.2);
-  margin : 2.5rem auto;
-  display : flex;
-  flex : auto;
-  flex-wrap: wrap;
-  padding : 0;
-}
-
-.clickable:hover {
-  cursor : pointer;
-}
-
-.listed-item {
-  width : 320px;
-  height : 120px;
-  list-style-type : none;
-  margin : 0.5rem auto;
-  padding : 0.7rem;
-  background : rgba(200, 200, 200, 0.3);
-  display : flex;
-  flex-wrap: wrap;
-  flex-direction: column;
-}
-
 .listed-item p, .listed-item h3 {
 /*  font-size : 0.8rem; */
   overflow :visible;
 }
 
-.listed-item img {
-  width : 80px;
-  height : 120px;
-  padding : 0;
-  background : burlywood;
-}
+
 .item-info {
   height : 100%;
   color : white;
@@ -102,8 +90,8 @@ body {
 .item-name {
   margin : 0;
   margin-bottom : 0.2rem;
-  font-size : 1rem;
-  width : 230px;
+  font-size : 1.5rem;
+  width :inherit;
 }
 .item-info p {
   margin : 0 auto;
@@ -138,15 +126,3 @@ body {
   bottom : 1rem;
   margin : 4rem;
 }
-.buy-these {
-  font-size: 1.5rem;
-  background : white;
-  border: none;
-  border-radius : 1.25rem;
-  padding : 0.5rem;
-}
-.buy-these:hover {
-  opacity : 0.8;
-  cursor : pointer;
-}
-
