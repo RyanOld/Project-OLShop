@@ -100,20 +100,28 @@ body {
 .order-buttons {
   display : flex;
   flex : auto;
-  width : 50%;
+  width : 30%;
   margin : 0 auto;
   padding : 0.25rem 0.5rem;
   background : rgba(255, 255, 250, 0.5);
-  border-radius : 1rem;
+  border-radius : 1.5rem;
+  font-size : 1.4rem;
+  vertical-align: middle;
 }
 .less, .more {
-  width : 1.5rem;
-  height : 1.5rem;
+  width : 2rem;
+  height : 2rem;
   background : greenyellow;
   margin : 0 auto;
   border : none;
-  border-radius : 0.75rem;
+  border-radius : 1rem;
   text-align : center;
+  font-size : 1.4rem;
+  vertical-align: middle;
+}
+.count {
+  vertical-align: middle;
+  margin: auto;
 }
 .less:hover, .more:hover {
   opacity : 0.8;

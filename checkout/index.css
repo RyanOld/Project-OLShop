@@ -122,6 +122,20 @@ body {
   text-align : center;
 
 } */
+
+.form form {
+  margin : 0 auto;
+  width : 100%;
+  padding-left : 1rem;
+}
+.form section {
+  display : grid;
+  grid-template-columns: 1fr 2fr 4fr;
+}
+.form input {
+  width : 70%;
+}
+
 .btn-container {
   margin : 0 auto;
   text-align: center;

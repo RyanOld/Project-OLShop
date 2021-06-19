@@ -6,7 +6,7 @@
   <title>Checkout | D'Vica Store</title>
   <link rel="stylesheet" href="./index.css">
   <meta name="viewport" content="width= device-width, initial-scale= 1">
-  <meta name="description" content="Bagian Utama D'Vica Online Store">
+  <meta name="description" content="Checkout barang-barang yang telah dipilih, lalu penghitungan harga total">
   <script defer src="./index.js"></script>
 </head>
 
@@ -49,6 +49,25 @@
       <p></p>
       <p>Total</p>
       <p class="total-cost">0</p>
+    </section>
+    <section class="form">
+      <form>
+        <section class="address">
+          <p></p>
+          <label for="address">Alamat Pengiriman : </label>
+          <input type="text" id="address" name="address" required="required" aria-required="true">
+        </section>
+        <section class="courier">
+          <p></p>
+          <label for="courier">Kurir : </label>
+          <input type="courier" id="courier" name="courier" required="required" aria-required="true">
+        </section>
+        <section class="payment">
+          <p></p>
+          <label for="payment">Metode Pembayaran : </label>
+          <input type="payment" id="payment" name="payment" required="required" aria-required="true">
+        </section>
+      </form>
     </section>
     <section class="btn-container">
       <button class="pay">Bayar</button>

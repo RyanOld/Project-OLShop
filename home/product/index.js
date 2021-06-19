@@ -4,8 +4,10 @@ let moreBtnArr = document.querySelectorAll(".more");
   minBtnArr.forEach(element => {
    element.addEventListener("click", () => {
      a = element.parentElement.querySelector(".count");
+     if(parseInt(a.innerHTML) > 0) {
       a.innerHTML = parseInt(a.innerHTML) - 1;
   //    console.log("less2");
+     }
       })
         });
     moreBtnArr.forEach(element => {
@@ -15,6 +17,14 @@ let moreBtnArr = document.querySelectorAll(".more");
         //    console.log("more2");
         })
       });
+//populate product count based on what is in home page
+let countDisplay = document.querySelector('.count');
+countDisplay.innerHTML = localStorage['orders'].split(',')[localStorage['productno']];
+let orders = localStorage['orders'].split(',');
+setInterval(() => {
+  orders[localStorage['productno']] = parseInt(countDisplay.innerHTML);
+  localStorage['orders'] = orders;
+}, 300);
 
 const itemName = document.querySelector('.item-name');
 const stock = document.querySelector('.stock');

@@ -1,4 +1,4 @@
-//less/minus buttons(-)
+//less/minus buttons(-/+)
 
 let minBtnArr = document.querySelectorAll(".less");
 let moreBtnArr = document.querySelectorAll(".more");
@@ -8,7 +8,9 @@ let productBtnArr = document.querySelectorAll('.clickable');
 const greetings = document.querySelector('#account-name');
 //take count of each product, send it to checkout page
 let countBtnArr = document.querySelectorAll('.count');
-let productCountArr = [];
+let productCountArr;
+//create transaction JSON to send to database server
+let checkoutBasket = {};
 //transition to checkout page
 checkoutBtn = document.querySelector('.buy-these');
 checkoutBtn.onclick = () => {
@@ -19,7 +21,7 @@ checkoutBtn.onclick = () => {
 //getting data on the current user logged in
 let auth = 'Bearer ' + localStorage['jwt'];
 let currentUser = {};
-//fetching currently logged-in user
+//fetching data of currently logged-in user
 fetch('http://localhost:1337/users/me', {
     method: 'GET',
     headers: {
@@ -46,13 +48,14 @@ fetch('http://localhost:1337/users/me', {
 
 
 //Page Functionality
+/*
 const itemDetail = function(id, quant, price) {
   this.id = id;
   this.quantity = quant;
   this.price = price;
   this.totalPrice = price * quant;
 }
-
+*/
 let customerOrders = [];
                     //[new ItemDetail(1, 2, 2000), new ItemDetail(2, 3, 5000)]
 /*
@@ -112,27 +115,12 @@ fetch('http://localhost:1337/products', {
         //put code that use the var here! not outside!
         
         productsData = productsdata;
-        //fetching all available products.
+        //fetching all available products. (add all products as cards)
         let productNode = root.querySelector('#seed').cloneNode(true);
 
         let docFrag = document.createDocumentFragment();
         for(let index = 0; index < productsData.length; index++) {
           productNode = root.querySelector('#seed').cloneNode(true);
- /*
-          productNode = document.createElement('li');
-          productNode.append(document.createElement('img'));
-          productNode.append(document.createElement('div'));
-          productNode.querySelector('div').append(document.createElement('h3'));
-          productNode.querySelector('div').append(document.createElement('p'));
-          productNode.querySelector('div').append(document.createElement('p'));
-          productNode.querySelector('div').append(document.createElement('p'));
-          productNode.querySelector('div').append(document.createElement('div'));
-          productNode.querySelector('div').querySelector('div').append(document.createElement('button'));
-          productNode.querySelector('div').querySelector('div').append(document.createElement('p'));
-          productNode.querySelector('div').querySelector('div').append(document.createElement('button'));
-
-          document.querySelector('.listed-items-container').append(productNode);
-*/
           productNode.querySelector('img').src = "http://localhost:1337" + productsdata[index].picture.formats.thumbnail.url;
 //          console.log(productNode.src);
           productNode.querySelector('.item-name').innerHTML = productsData[index].name;
@@ -153,8 +141,10 @@ fetch('http://localhost:1337/products', {
         minBtnArr.forEach(element => {
           element.addEventListener("click", () => {
             a = element.parentElement.querySelector(".count");
+            if(parseInt(a.innerHTML) > 0) {
             a.innerHTML = parseInt(a.innerHTML) - 1;
         //    console.log("less2");
+            }
           })
         });
         moreBtnArr.forEach(element => {
@@ -175,6 +165,7 @@ fetch('http://localhost:1337/products', {
 */
         productBtnArr = document.querySelectorAll('.clickable');
         index = 0;
+        //used to know which card is click. rather crude method tbh. wanna change? iunno, maybe nah
         productBtnArr.forEach((element) => {
         element.addEventListener('click', () => {
           localStorage['productno'] = parseInt(element.parentElement.parentElement.id);
@@ -189,9 +180,10 @@ fetch('http://localhost:1337/products', {
         console.log(productsdata);
         //create array of item counts for enumerating orders.
         countBtnArr = document.querySelectorAll('.count');
-//        index = 0;
+        index = 0;
         countBtnArr.forEach((element) => {
-          productCountArr.push(parseInt(element.innerHTML));
+//          productCountArr.push(parseInt(element.innerHTML));
+          productBtnArr[index] = parseInt(element.innerHTML);
 /*
           element.setInterval(() => {
             productCountArr[index] = parseInt(element.innerHTML);
@@ -199,16 +191,31 @@ fetch('http://localhost:1337/products', {
           */
 //          index++;
         })
+
         console.log(productCountArr);
-        localStorage['orders'] = productCountArr;
+        //what to do bro i dunno, this one is for replacing old orders to a new one but 
+        //if we go backward the current orders will be lost.
+        console.log(productCountArr)
+        console.log(localStorage['orders'])
+        productCountArr = localStorage['orders'].split(',') ;
+        //populate the counts on each product from orders in localstorage
+        index = 0;
+        countBtnArr.forEach(element => {
+          element.innerHTML = localStorage['orders'].split(',')[index];
+          index++;
+        });
+        //constantly watch change in order amounts.
+        setInterval(() => {
+          console.log(localStorage['orders'])
+          //fault lies after here
+          productCountArr = localStorage['orders'].split(',');
+          for(index = 0; index < countBtnArr.length; index++) {
+            productCountArr[index] = parseInt(countBtnArr[index].innerHTML);
+          } 
+          localStorage['orders'] = productCountArr;
+        }, 400);
+
         }).catch(e => {
         console.log(e);
         });
 
-//constantly watch change in order amounts.
-setInterval(() => {
-  for(index = 0; index < productCountArr.length; index++) {
-    productCountArr[index] = parseInt(countBtnArr[index].innerHTML);
-  } 
-  localStorage['orders'] = productCountArr;
-}, 400);
