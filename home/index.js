@@ -1,5 +1,4 @@
 //button functionality
-logoutButton
 //less/minus buttons(-/+)
 let minBtnArr = document.querySelectorAll(".less");
 let moreBtnArr = document.querySelectorAll(".more");
