@@ -1,5 +1,6 @@
+//button functionality
+logoutButton
 //less/minus buttons(-/+)
-
 let minBtnArr = document.querySelectorAll(".less");
 let moreBtnArr = document.querySelectorAll(".more");
 //make all product listings clickable => go to details of clicked product
