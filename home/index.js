@@ -200,15 +200,19 @@ fetch('http://localhost:1337/products', {
         productCountArr = localStorage['orders'].split(',') ;
         //populate the counts on each product from orders in localstorage
         index = 0;
-        countBtnArr.forEach(element => {
-          element.innerHTML = localStorage['orders'].split(',')[index];
-          index++;
-        });
+        if(localStorage['orders'] != '') {
+          countBtnArr.forEach(element => {
+            element.innerHTML = localStorage['orders'].split(',')[index];
+            index++;
+          });
+        }
         //constantly watch change in order amounts.
         setInterval(() => {
           console.log(localStorage['orders'])
           //fault lies after here
+          if(localStorage['orders'] != '') {
           productCountArr = localStorage['orders'].split(',');
+          }
           for(index = 0; index < countBtnArr.length; index++) {
             productCountArr[index] = parseInt(countBtnArr[index].innerHTML);
           } 

@@ -6,7 +6,7 @@
   <title>Checkout | D'Vica Store</title>
   <link rel="stylesheet" href="./index.css">
   <meta name="viewport" content="width= device-width, initial-scale= 1">
-  <meta name="description" content="Checkout barang-barang yang telah dipilih, lalu penghitungan harga total">
+  <meta name="description" content="Checkout barang-barang yang telah dipilih, lalu penghitungan harga total, isi alamat kirim, pilih metode pembayaran dan kurir.">
   <script defer src="./index.js"></script>
 </head>
 
@@ -45,10 +45,12 @@
       <p class="admin-cost">0</p>
       </section>
     </section>
-    <section class="total">
-      <p></p>
-      <p>Total</p>
-      <p class="total-cost">0</p>
+    <section class="total-container">
+      <section class="total">
+        <p></p>
+        <p>Total</p>
+        <p class="total-cost">0</p>
+      </section>
     </section>
     <section class="form">
       <form>
@@ -60,12 +62,34 @@
         <section class="courier">
           <p></p>
           <label for="courier">Kurir : </label>
-          <input type="courier" id="courier" name="courier" required="required" aria-required="true">
+          <div class="selected">
+            <li class="select">Pilih Kurir..
+            </li>
+            <ul class="couriers hidden">
+              <li class="courier-item">SiCepat</li>
+              <li class="courier-item">JNE Regular</li>
+              <li class="courier-item">JNE Express</li>
+              <li class="courier-item">JNE OKE</li>
+              <li class="courier-item">Wahana</li>
+              <li class="courier-item">Go-Jek</li>
+              <li class="courier-item">Grab</li>
+            </ul>
+          </div>
+          
         </section>
         <section class="payment">
           <p></p>
           <label for="payment">Metode Pembayaran : </label>
-          <input type="payment" id="payment" name="payment" required="required" aria-required="true">
+          <div class="method">
+            <li class="choice">Pilih Pembayaran..</li>
+            <ul class="payments hidden">
+              <li class="payment-item">Transfer BNI</li>
+              <li class="payment-item">Transfer BRI</li>
+              <li class="payment-item">Transfer BCA</li>
+              <li class="payment-item">Transfer Mandiri</li>
+              <li class="payment-item">Cash On Delivery (COD)</li>
+            </ul>
+          </div>
         </section>
       </form>
     </section>

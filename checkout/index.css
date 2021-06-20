@@ -74,6 +74,11 @@ body {
   font-size : 1rem;
   padding-left : 1rem;
 }
+
+.admin, .total {
+  margin-right : 1rem;
+}
+
 .checkout-sys p {
   margin : 0.7rem 0;
   font-weight: 400;
@@ -83,13 +88,15 @@ body {
   grid-template-columns: 1fr 4fr 2fr;
 }
 
+.total-container {
+  margin : 0 auto;
+  padding-left: 1rem;
+  width : 100%;
+}
 .total {
   display : grid;
   grid-template-columns: 1fr 4fr 2fr;
-  width : 100%;
-  margin : 0 auto;
-  font-size : 1rem;
-  padding-left : 1rem;
+  margin-right : 1rem;
 }
 .total p {
   margin : 0.2rem 0;
@@ -134,6 +141,64 @@ body {
 }
 .form input {
   width : 70%;
+}
+
+.address {
+  margin : 0.5rem 0;
+}
+#address {
+  border-radius: 1rem;
+  padding : 0 1rem;
+  width : 55%;
+}
+
+.payment {
+  margin : 0.2rem 0;
+}
+.choice, .payment-item {
+  list-style-type: none;
+  margin : 0;
+  padding : 0.3rem;
+  background : rgba(100, 225, 100, 0.8);
+  width : 60%;
+}
+.choice:hover, .payment-item:hover {
+  cursor: pointer;
+  opacity: 0.8;
+}
+.select {
+  list-style-type: none;
+  margin : 0;
+  padding : 0.3rem;
+  background : rgba(100, 225, 100, 0.8);
+  width : 60%;
+}
+.couriers {
+  padding : 0;
+  margin : 0;
+}
+.payments {
+  margin : 0;
+  padding : 0;
+}
+.courier-item {
+  list-style-type: none;
+  margin : 0;
+  padding : 0.3rem;
+  background : rgba(100, 225, 100, 0.8);
+  width : 60%;
+}
+.courier-item:hover {
+  cursor: pointer;
+  opacity: 0.8;
+}
+.hidden {
+  visibility:hidden;
+  height : 0;
+}
+.select:hover {
+  cursor: pointer;
+  opacity: 0.8;
 }
 
 .btn-container {

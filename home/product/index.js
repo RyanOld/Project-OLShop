@@ -67,8 +67,8 @@ fetch('http://localhost:1337/products', {
         productImage.src = "http://localhost:1337" + productsData[index].picture.url;
         console.log(productImage.src);
         itemName.innerHTML = productsData[index].name;
-        stock.innerHTML = "Stock : " + productsData[index].stock;
-        price.innerHTML = "Harga : " + productsData[index].price;
+        stock.innerHTML = "Stock : " + productsData[index].stock + " buah";
+        price.innerHTML = "Harga : Rp." + productsData[index].price;
         description.innerHTML = productsData[index].description;
         }).catch(e => {
         console.log(e);
