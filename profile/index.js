@@ -15,7 +15,7 @@ const logoutButton = document.querySelector(".logout");
 logoutButton.addEventListener("click", () => {
   localStorage['currentuser'] = '';
   localStorage['jwt'] = '';
-  window.location.href = "../home";
+  window.location.href = "../../";
 })
 
 const firstLastName = document.querySelector('#name');

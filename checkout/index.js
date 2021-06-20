@@ -152,12 +152,9 @@ fetch('http://localhost:1337/products', {
         totalCost.innerHTML = "Rp. " + totalCost.innerHTML;
         document.querySelector('#seed').remove();
         root.append(docFrag);
-
-        
         }).catch(e => {
         console.log(e);
         });
-
 
 //create transaction record to push into DB as receipt
 //get user info
@@ -183,9 +180,10 @@ fetch('http://localhost:1337/users/me', {
         currentUser = credential;
         localStorage['currentuser'] = currentUser;
 
-        }).catch(e => {
+        })
+/*        .catch(e => {
         console.log(e);
-        });
+        }); */
 //set trigger as pay button. (bayar)
 const payBtn = document.querySelector('.pay');
 let transaction = {};
@@ -213,7 +211,7 @@ payBtn.addEventListener('click', () => {
     headers: {
       'Content-Type': 'application/json',
       'Connection' : 'keep-alive',
-      'Authorization': auth,
+//      'Authorization': auth,
       }
     })
     .then(data => {
@@ -239,7 +237,7 @@ payBtn.addEventListener('click', () => {
               headers: {
                 'Content-Type': 'application/json',
                 'Connection' : 'keep-alive',
-                'Authorization': auth,
+//                'Authorization': auth,
               }
             })
             .then(data => {
@@ -261,30 +259,6 @@ payBtn.addEventListener('click', () => {
         console.log("Hello");
         sleep(1500).then(() => { window.location.href = "../payment"; });
 
-//        console.log(orderArr);
-/*
-        orderArr.forEach(element => {
-          fetch('http://localhost:1337/orderdetails', {
-          method: 'POST',
-          body: JSON.stringify(element),
-          headers: {
-            'Content-Type': 'application/json',
-            'Connection' : 'keep-alive',
-            'Authorization': auth,
-            }
-          })
-          .then(data => {
-              if (!data.ok) {
-                throw Error(data.status);
-              }
-              return data.json();
-              }).then(credential => {
-              console.log(credential);
-              }).catch(e => {
-              console.log(e);
-              });
-        }) */
-        
         }).catch(e => {
         console.log(e);
         });
