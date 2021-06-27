@@ -43,7 +43,7 @@ signupBtn.addEventListener("click", (event) => {
     body: JSON.stringify(inputs),
     };
 
-    fetch('http://localhost:1337/auth/local/register', options)
+    fetch('https://olshop-kel-f-db.herokuapp.com/auth/local/register', options)
     .then(data => {
         if (!data.ok) {
           throw Error(data.status);

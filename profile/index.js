@@ -15,7 +15,7 @@ const logoutButton = document.querySelector(".logout");
 logoutButton.addEventListener("click", () => {
   localStorage['currentuser'] = '';
   localStorage['jwt'] = '';
-  window.location.href = "../../";
+  window.location.href = "../";
 })
 
 const firstLastName = document.querySelector('#name');
@@ -26,7 +26,7 @@ const cellphone = document.querySelector('#cellphone');
 let auth = 'Bearer ' + localStorage['jwt'];
 let currentUser = {};
 
-fetch('http://localhost:1337/users/me', {
+fetch('https://olshop-kel-f-db.herokuapp.com/users/me', {
     method: 'GET',
     headers: {
       /*

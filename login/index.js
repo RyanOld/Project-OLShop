@@ -50,10 +50,7 @@ var jwtToken = localStorage['jwt'];
 
 loginBtn.addEventListener("click", (event) => {
   event.preventDefault();
-
-  
-
-  fetch('http://localhost:1337/auth/local', options)
+  fetch('https://olshop-kel-f-db.herokuapp.com/auth/local', options)
     .then(data => {
         if (!data.ok) {
           throw Error(data.status);

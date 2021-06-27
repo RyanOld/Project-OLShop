@@ -22,7 +22,7 @@ checkoutBtn.onclick = () => {
 let auth = 'Bearer ' + localStorage['jwt'];
 let currentUser = {};
 //fetching data of currently logged-in user
-fetch('http://localhost:1337/users/me', {
+fetch('https://olshop-kel-f-db.herokuapp.com/users/me', {
     method: 'GET',
     headers: {
       /*
@@ -95,7 +95,7 @@ root = document.querySelector('.listed-items-container');
 
 //getting data
 let productsData = {};
-fetch('http://localhost:1337/products', {
+fetch('https://olshop-kel-f-db.herokuapp.com/products', {
     method: 'GET',
     headers: {
       /*
@@ -121,7 +121,7 @@ fetch('http://localhost:1337/products', {
         let docFrag = document.createDocumentFragment();
         for(let index = 0; index < productsData.length; index++) {
           productNode = root.querySelector('#seed').cloneNode(true);
-          productNode.querySelector('img').src = "http://localhost:1337" + productsdata[index].picture.formats.thumbnail.url;
+          productNode.querySelector('img').src = "https://olshop-kel-f-db.herokuapp.com" + productsdata[index].picture.formats.thumbnail.url;
 //          console.log(productNode.src);
           productNode.querySelector('.item-name').innerHTML = productsData[index].name;
 //          productNode.querySelector('.stock').innerHTML = "Stok : " + productsData[index].stock;

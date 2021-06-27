@@ -36,7 +36,7 @@ productNode = document.querySelector('.product-details');
 let productsData = {};
 
 currentProduct = {};
-fetch('http://localhost:1337/products', {
+fetch('https://olshop-kel-f-db.herokuapp.com/products', {
     method: 'GET',
     headers: {
       /*
@@ -64,7 +64,7 @@ fetch('http://localhost:1337/products', {
         currentProduct = productsData[parseInt(localStorage['productno'])];
         console.log(currentProduct);
 
-        productImage.src = "http://localhost:1337" + productsData[index].picture.url;
+        productImage.src = "https://olshop-kel-f-db.herokuapp.com" + productsData[index].picture.url;
         console.log(productImage.src);
         itemName.innerHTML = productsData[index].name;
         stock.innerHTML = "Stock : " + productsData[index].stock + " buah";

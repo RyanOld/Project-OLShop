@@ -106,7 +106,7 @@ choices.forEach(element => {
 })
 //fetch products data from DB
 })
-fetch('http://localhost:1337/products', {
+fetch('https://olshop-kel-f-db.herokuapp.com/products', {
     method: 'GET',
     headers: {
       /*
@@ -160,7 +160,7 @@ fetch('http://localhost:1337/products', {
 //get user info
 let currentUser = {};
 let auth = 'Bearer ' + localStorage['jwt'];
-fetch('http://localhost:1337/users/me', {
+fetch('https://olshop-kel-f-db.herokuapp.com/users/me', {
     method: 'GET',
     headers: {
       /*
@@ -205,7 +205,7 @@ payBtn.addEventListener('click', () => {
     'users_permissions_user' : currentUser.id
   }
   //failure taming fetch, trying to use some other more forceful method
-  fetch('http://localhost:1337/transactions', {
+  fetch('https://olshop-kel-f-db.herokuapp.com/transactions', {
     method: 'POST',
     body: JSON.stringify(transaction),
     headers: {
@@ -231,7 +231,7 @@ payBtn.addEventListener('click', () => {
             order.itemcount = localStorage['orders'].split(',')[index];
             order.product = productsData[index].id;
             order.transaction = transactionID;
-            fetch('http://localhost:1337/orderdetails', {
+            fetch('https://olshop-kel-f-db.herokuapp.com/orderdetails', {
               method: 'POST',
               body: JSON.stringify(order),
               headers: {
@@ -257,7 +257,7 @@ payBtn.addEventListener('click', () => {
         }
 
         console.log("Hello");
-        sleep(1500).then(() => { window.location.href = "../payment"; });
+        sleep(2500).then(() => { window.location.href = "../payment"; });
 
         }).catch(e => {
         console.log(e);

@@ -72,3 +72,6 @@ body {
 .btn-container a {
   color : white;
 }
+.loading:hover {
+  cursor:wait;
+}
