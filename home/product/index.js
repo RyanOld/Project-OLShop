@@ -60,12 +60,12 @@ fetch('https://olshop-kel-f-db.herokuapp.com/products', {
         //fetching currently selected product. this is tricky. take selected product id from homepage, then
         //copy to localstorage, then display in ./product
         index = localStorage['productno'];
-        console.log(index);
+        //console.log(index);
         currentProduct = productsData[parseInt(localStorage['productno'])];
-        console.log(currentProduct);
+        //console.log(currentProduct);
 
         productImage.src = "https://olshop-kel-f-db.herokuapp.com" + productsData[index].picture.url;
-        console.log(productImage.src);
+        //console.log(productImage.src);
         itemName.innerHTML = productsData[index].name;
         stock.innerHTML = "Stock : " + productsData[index].stock + " buah";
         price.innerHTML = "Harga : Rp." + productsData[index].price;

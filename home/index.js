@@ -192,11 +192,11 @@ fetch('https://olshop-kel-f-db.herokuapp.com/products', {
 //          index++;
         })
 
-        console.log(productCountArr);
+        //console.log(productCountArr);
         //what to do bro i dunno, this one is for replacing old orders to a new one but 
         //if we go backward the current orders will be lost.
-        console.log(productCountArr)
-        console.log(localStorage['orders'])
+        //console.log(productCountArr)
+        //console.log(localStorage['orders'])
         productCountArr = localStorage['orders'].split(',') ;
         //populate the counts on each product from orders in localstorage
         index = 0;
@@ -208,7 +208,7 @@ fetch('https://olshop-kel-f-db.herokuapp.com/products', {
         }
         //constantly watch change in order amounts.
         setInterval(() => {
-          console.log(localStorage['orders'])
+//          console.log(localStorage['orders'])
           //fault lies after here
           if(localStorage['orders'] != '') {
           productCountArr = localStorage['orders'].split(',');

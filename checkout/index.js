@@ -256,7 +256,7 @@ payBtn.addEventListener('click', () => {
           return new Promise(resolve => setTimeout(resolve, ms));
         }
 
-        console.log("Hello");
+//        console.log("Hello");
         sleep(2500).then(() => { window.location.href = "../payment"; });
 
         }).catch(e => {
