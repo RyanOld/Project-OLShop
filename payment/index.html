@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8">
-  <title>Pembayaran Pesanan | D'Vica Store</title>
+  <title>Payment | D'Vica Store</title>
   <link rel="stylesheet" href="./index.css">
   <meta name="viewport" content="width= device-width, initial-scale= 1">
   <meta name="description" content="Halaman pembayaran pesanan setelah memesan di Online Shop D'Vica Store">
@@ -12,15 +12,80 @@
 <body>
   <header>
     <h1 class="title">Terima Kasih Telah Belanja di D'Vica Store</h1>
+    <p class="subtitle">Silakan lakukan pembayaran sesuai petunjuk di bawah</p>
   </header>
   <main>
-    <ul class="pesanan">
-      <li class="item">
-        <p>Nama Produk</p>
-        <p>Jumlah</p>
-        <p>Harga</p>
-      </li>
-    </ul>
+    <section class="kwitansi">
+      <ul class="pesanan" id="root">
+        <li class="item indexer">
+          <p class="product-name">Nama Produk</p>
+          <p class="pcs">Jumlah</p>
+          <p class="price">Harga</p>
+        </li>
+        <li class="item" id="seed">
+          <p class="product-name">Nama Produk</p>
+          <p class="pcs">Jumlah</p>
+          <p class="price">Harga</p>
+        </li>
+      </ul>
+      <section class="admin">
+        <p>Biaya Administrasi (4%)</p>
+        <p></p>
+        <p class="admin-cost">0</p>
+      </section>
+      <section class="total">
+        <p>Total</p>
+        <p></p>
+        <p class="total-cost">0</p>
+      </section>
+    </section>
+    <section class="payments">
+      <p class="help">Silakan klik metode pembayaran yang Anda pilih untuk mengetahui prosedur pembayaran</p>
+      <ul class="payment-list">
+        <li>
+          <h3>Transfer Bank BNI</h3>
+          <div class="hide">
+            <p>Silakan transfer (max. 1x24 jam) ke rekening di bawah ini :</p>
+            <p class="norek">1234 - 3456 - 6789</p>
+            <p class="receiver">Atas nama Dvica Store </p>
+            <p>Lalu kirimkan bukti pembayaran ke : pembayaran@dvica.com</p>
+          </div>
+        </li>
+        <li>
+          <h3>Transfer Bank BRI</h3>
+          <div class="hide">
+            <p>Silakan transfer (max. 1x24 jam) ke rekening di bawah ini :</p>
+            <p class="norek">2345 - 3456 - 7890</p>
+            <p class="receiver">Atas nama Dvica Store </p>
+            <p>Lalu kirimkan bukti pembayaran ke : pembayaran@dvica.com</p>
+          </div>
+        </li>
+        <li>
+          <h3>Transfer Bank BCA</h3>
+          <div class="hide">
+            <p>Silakan transfer (max. 1x24 jam) ke rekening di bawah ini :</p>
+            <p class="norek">1023 - 3456 - 1234</p>
+            <p class="receiver">Atas nama Dvica Store </p>
+            <p>Lalu kirimkan bukti pembayaran ke : pembayaran@dvica.com</p>
+          </div>
+        </li>
+        <li>
+          <h3>Transfer Bank Mandiri</h3>
+          <div class="hide">
+            <p>Silakan transfer (max. 1x24 jam) ke rekening di bawah ini :</p>
+            <p class="norek">9087 - 3456 - 2345</p>
+            <p class="receiver">Atas nama Dvica Store </p>
+            <p>Lalu kirimkan bukti pembayaran ke : pembayaran@dvica.com</p>
+          </div>
+        </li>
+        <li>
+          <h3>Cash On Delivery (COD)</h3>
+          <div class="hide">
+            <p>Silakan bayarkan sesuai harga kepada kurir pada saat barang sampai tujuan.</p>
+          </div>
+        </li>
+      </ul>
+    </section>
   </main>
 </body>
 
