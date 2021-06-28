@@ -90,5 +90,30 @@ fetch('https://olshop-kel-f-db.herokuapp.com/users/me', {
         console.log(e);
         });
 
-
-
+//add capacity to delete your own account.
+deleteBtn = document.querySelector(".delete");
+deleteBtn.addEventListener("click", () => {
+  //fetch request delete with bearer token(logged in user only)
+  fetch('https://olshop-kel-f-db.herokuapp.com/users/' + currentUser.id, {
+    method: 'DELETE',
+    body: {},
+    headers: {
+      //'Content-Type': 'application/json',
+      'Connection' : 'keep-alive',
+      'Authorization': auth,
+    }
+  })
+    .then(data => {
+        if (!data.ok) {
+          throw Error(data.status);
+        }
+        return data.json();
+        }).then(credential => {
+        console.log(credential);
+        window.location.href = "../../";
+        return false; 
+        }).catch(e => {
+        console.log(e);
+        alert("Anda Harus Login Terlebih Dahulu")
+        });
+})
