@@ -195,7 +195,8 @@ const order = {
   'product' : '',
   'transaction' : ''
 }
-payBtn.addEventListener('click', () => {
+payBtn.addEventListener('click', (event) => {
+  event.preventDefault()
   //create transaction object
   transaction = {
     'totalprice' : totalCost.innerHTML.split('Rp. ')[1],

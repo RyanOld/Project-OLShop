@@ -1,18 +1,18 @@
 homeBtn = document.querySelector(".home");
 homeBtn.onclick = () => {
-  window.location.href = '../home';
+  window.location.href = '../../home';
 }
 myProfileBtn = document.querySelector(".myprofile");
 myProfileBtn.onclick = () => {
-  window.location.href = './';
+  window.location.href = '../';
 }
 editBtn = document.querySelector(".edit");
 editBtn.onclick = () => {
-  window.location.href = './edit';
+  window.location.href = '../edit';
 }
 changePassBtn = document.querySelector(".change-password");
 changePassBtn.onclick = () => {
-  window.location.href = './changepass'
+  window.location.href = './'
 }
 
 const logoutButton = document.querySelector(".logout");
