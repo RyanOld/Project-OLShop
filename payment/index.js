@@ -23,13 +23,7 @@ for(let index = 0; index < paymentContainer.length ; index++) {
 
 fetch('https://olshop-kel-f-db.herokuapp.com/products', {
     method: 'GET',
-    headers: {
-      /*
-      'Content-Type': 'application/json',
-      'Connection' : 'keep-alive',
-      */
-//      'Authorization': auth,
-      }
+    headers: {}
     })
     .then(data => {
         if (!data.ok) {
