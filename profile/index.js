@@ -10,10 +10,6 @@ editBtn = document.querySelector(".edit");
 editBtn.onclick = () => {
   window.location.href = './edit';
 }
-changePassBtn = document.querySelector(".change-password");
-changePassBtn.onclick = () => {
-  window.location.href = './changepass'
-}
 
 const logoutButton = document.querySelector(".logout");
 logoutButton.addEventListener("click", () => {
